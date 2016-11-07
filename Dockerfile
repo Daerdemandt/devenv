@@ -8,7 +8,9 @@ MAINTAINER Roman Kuzmichev version: 0.1
 
 RUN pacman-key --populate archlinux && pacman-key --refresh-keys 
 
-RUN pacman -Suy git vim --noconfirm
+RUN pacman-db-upgrade
+
+RUN pacman -Suy git vim vim-fugitive --noconfirm
 
 # We install packages first and only then add files. If either file changes, cache will be invalidated
 
